@@ -1,0 +1,47 @@
+{
+  "name": "mangalam-perfumes",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -k -n \"api,web\" -c \"magenta,cyan\" \"node server/index.js\" \"vite\"",
+    "server": "node server/index.js",
+    "client": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "admin:create": "node server/scripts/manage-admin.js create",
+    "admin:reset": "node server/scripts/manage-admin.js reset-password",
+    "admin:list": "node server/scripts/manage-admin.js list",
+    "db:sync": "node server/scripts/sync-to-supabase.js",
+    "db:sync:orders": "node server/scripts/sync-to-supabase.js --orders-only",
+    "db:diagnose": "node server/scripts/diagnose-db.js",
+    "db:status": "node -e \"import('./server/db/supabaseClient.js').then(m => m.testSupabaseConnection()).then(r => console.log(JSON.stringify(r, null, 2)))\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.109.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.11.1",
+    "canvas-confetti": "^1.9.4",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^1.69.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^6.4.5",
+    "ws": "^8.22.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.2",
+    "concurrently": "^9.2.5",
+    "postcss": "^8.5.32",
+    "puppeteer": "^24.43.1",
+    "tailwindcss": "^3.4.19"
+  }
+}

@@ -1,0 +1,44 @@
+# Environment and secret files
+.env
+.env.production
+.env.local
+.env.*.local
+*.local
+
+# Dependencies
+node_modules
+dist
+dist-ssr
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# OS and Editor files
+.DS_Store
+.idea
+.vscode
+*.swp
+
+# SQLite runtime data
+server/data/*.db
+server/data/*.db-wal
+server/data/*.db-shm
+
+# Private environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Generated dependencies and build output
+node_modules/
+dist/
+build/
+.netlify/
+
+# Local database and machine files
+server/data/*.db
+*.sqlite
+*.sqlite3
+.DS_Store

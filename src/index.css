@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #07241A;
+    overflow-x: hidden;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 3px;
+  }
+}
+
+/* Custom luxury glass & gold effects */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F4E4B5 0%, #D4AF37 50%, #A47D1A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-text-light {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F4E4B5 40%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-subtle {
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.emerald-silk-gradient {
+  background: radial-gradient(circle at 50% 30%, #0B382A 0%, #07241A 60%, #041610 100%);
+}
+
+.lotus-pattern {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07241A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A5744;
+  border-radius: 4px;
+  border: 2px solid #07241A;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
